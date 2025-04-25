@@ -1,0 +1,23 @@
+/*
+*Readme for genchars.c / Multiprocessing in C / Program in C
+*
+*Liz Kiefer / CS5600 / Northeastern University
+*Fall 2024 / Oct 3, 2024
+*
+*/
+
+Building the program:
+Run "make clean all" to build both cipher and genchars
+
+Running the program:
+Run ./genchars
+It will write the initial generated strings to ./outputfile.txt
+That will then be loaded into a queue_t
+The contents of that queue will be encrypted using ./cipher
+And written out to ./cipherOutput-<PID>.txt, where PID is the ID of the original process
+
+Output may take time to write to the output file even if the original process has exited.
+
+Number of lines in both outputfile.txt and cipherOutput-<PID>.txt should match the stringCount value in genchars.c, which is set to 10000.
+
+cipherOutput-<PID>.txt from previous runs should not be overwritten by new runs.
